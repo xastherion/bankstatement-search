@@ -2,7 +2,31 @@
 
 Ein Python-Skript zum Durchsuchen von PDF-Kontoauszügen nach bestimmtem Text und automatischem Extrahieren von Transaktionsdaten.
 
+## Das Problem
+
+Nach vielen Jahren ist es nicht mehr möglich, Kontoauszüge direkt in der Weboberfläche des Bankensystems zu `CSV` zu exportieren. Die Suche nach bestimmten Transaktionen oder Benefiziären über die Web-Plattform ist unpraktisch und zeitaufwändig. 
+
+Dieses Skript löst das Problem, indem es eine **lokale Batch-Suche** durch Ihre gesammelten PDF-Kontoauszüge durchführt und automatisch alle Transaktionen mit einem bestimmten Benefiziar oder Kreditgeber extrahiert.
+
+## Optimiert für VB Kontoauszüge
+
+Dieses Skript ist speziell für die **PDF-Kontoauszüge der Volksbank (VB) Deutschland** optimiert. Es berücksichtigt:
+- Das spezifische PDF-Layout der VB-Kontoauszüge (zwei-spaltig)
+- Deutsche Datumsformate (`DD.MM.YYYY`)
+- Deutsche Zahlenformate mit Komma als Dezimaltrennzeichen
+- Buchungslogik mit `S` (Soll) und `H` (Haben)
+- Beide PDF-Formate: Legacy-Format (2016-2023) und neues Format (2024+)
+
 ## Features
+
+- 🔍 **Textsuche**: Durchsuchen Sie alle PDF-Kontoauszüge nach beliebigem Text
+- 📊 **Datenextraktion**: Extrahiert automatisch Datum, Betrag und Suchtext
+- 💱 **Zahlenseparation**: Konvertiert deutsche Beträge (mit Komma) in Excel-kompatibles Format
+- ✅ **Vorzeichenlogik**: 
+  - `S` (Soll) = positive Beträge (Ausgaben)
+  - `H` (Haben) = negative Beträge (Eingänge)
+- 📁 **Batch-Verarbeitung**: Verarbeitet alle PDF-Dateien im Verzeichnis
+- 📈 **CSV-Export**: Ergebnisse als `ergebnisse.csv` mit `|` als Trennzeichen
 
 - 🔍 **Textsuche**: Durchsuchen Sie alle PDF-Kontoauszüge nach beliebigem Text
 - 📊 **Datenextraktion**: Extrahiert automatisch Datum, Betrag und Suchtext
